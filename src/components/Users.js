@@ -4,16 +4,6 @@ import {useUsers} from "../hooks/useUsers";
 
 
 export default function UsersList() {
-    // const usersQuery = useQuery({
-    //     queryKey: ["users"],
-    //     queryFn: getUsers,
-    //     cacheTime:5000, // default = 30000
-    //     staleTime:30000, //default = 0
-    //     refetchOnMount:true, //default = true
-    //     refetchOnWindowFocus:true,
-    //     //refetchInterval:false, //default = false , if set 2000 will refetch every 2sec
-    //    // refetchIntervalInBackground:true, // refetch data interval even its not focused
-    // })
 
     const onUsersSuccess = (data)=>{
         console.log('on users success side effect after data fetching', data);
@@ -25,7 +15,7 @@ export default function UsersList() {
 
     const useQuerySingleUser = useQuery({
         queryKey: ["usersFiltered"],
-        queryFn:getSingleUser,
+        queryFn:()=>getSingleUser(2),
         enabled:false,
     })
 

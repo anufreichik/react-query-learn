@@ -7,9 +7,9 @@ export function getUsers() {
         })
 }
 
-export function getSingleUser() {
+export function getSingleUser(id) {
     return axios
-        .get("https://reqres.in/api/users/2")
+        .get(`https://reqres.in/api/users/${id}`)
         .then(res => {
             return res.data;
         })
